@@ -26,7 +26,7 @@
     </h4>
 </div>
 
-<img src="assets/framework.jpg" width="650px"/>
+<img src="assets/framework.jpg" width="700px"/>
 
 </div>
 
@@ -40,7 +40,7 @@ Additionally, to further enhance segmentation quality, we design an asymmetric t
 Thanks to the rich supervision cues of the smoothness prior, our SmooSeg significantly outperforms STEGO in terms of pixel accuracy on three datasets: COCOStuff (+14.9%), Cityscapes (+13.0%), and Potsdam-3 (+5.7%).*
 
 
-## Codes and Environment
+### Codes and Environment
 
 ```
 # git clone this repository
