@@ -1,0 +1,68 @@
+output_root: 'outputs/'
+data_dir: 'data/'
+experiment_name: "exp1"
+log_dir: "cityscapes"
+azureml_logging: True
+
+# Loader params
+num_workers: 8
+max_steps: 3000            # 3000 8000
+batch_size: 32
+
+dataset_name: "cityscapes"
+crop_type: "five"
+crop_ratio: .5
+res: 224
+loader_crop_type: "center"
+
+# Model Params
+extra_clusters: 0
+model_type: "vit_small"   # "vit_base" "vit_small" "mocov2"
+arch: "dino"              # "dinov2"  "dino"
+dino_feat_type: "feat"
+projection_type: "nonlinear"
+dino_patch_size: 8
+n_feats: 384              # 2048 # 384 # 768
+dim: 64
+run_crf: False
+
+lr1: 1e-4
+lr2: 5e-4
+dropout: True
+
+temperature: 0.1
+alpha: 0.998
+
+pointwise: True
+seed: 0
+
+# cityscapes dino small
+neg_inter_shift:  0.5
+pos_intra_shift: -0.02
+
+# potsdam dino base
+#neg_inter_shift: 0.5
+#pos_intra_shift: 0.1
+
+# potsdam dinov2 base
+#neg_inter_shift: 0.5
+#pos_intra_shift: 0.32
+
+# cocostuff27 dino small
+#seed: 123456
+#neg_inter_shift:  0.48
+#pos_intra_shift: -0.02
+
+
+# Logging params
+n_images: 6
+scalar_log_freq: 10
+checkpoint_freq: 400
+val_freq: 400
+hist_freq: 100
+
+
+hydra:
+  run:
+    dir: "."
+  output_subdir: ~

@@ -1,0 +1,21 @@
+output_root: '../'
+data_dir: 'data/'
+experiment_name: "validation"
+res: 320
+batch_size: 32
+num_workers: 8
+run_crf: True
+run_prediction: True
+dark_mode: True
+use_ddp: False
+
+model_paths:
+#  - "checkpoints/cocostuff27_dino_small.ckpt"
+  - "checkpoints/cityscapes_dino_small.ckpt"
+#  - "checkpoints/potsdam_dino_vit_base.ckpt"
+
+
+hydra:
+  run:
+    dir: "."
+  output_subdir: ~
